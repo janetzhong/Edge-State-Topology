@@ -1,16 +1,42 @@
-# Edge-State-Supplementary-GIF
 
-## Topological Nature of Edge States for One-Dimensional Systems Without Symmetry Protection
+# Topological nature of edge states for one-dimensional systems without symmetry protection
 
-This repository contains supplementary GIFs for the paper "Topological Nature of Edge States for One-Dimensional Systems Without Symmetry Protection"
+This repository contains the code to reproduce the topological invariant phase diagrams in our paper. 
 
-### Hermitian Phase Diagram
-Illustrating the edge states and topological invariant in Hermitian systems:
+## How to Use
 
-<img src="https://github.com/janetzhong/Edge-State-Supplementary-GIF/blob/e2f2f659eebcb45eabbba55dc81f40e8bcc233cf/animationH.gif" alt="Hermitian Edge State Animation" width="600" >
+To solve for Hermitian phase diagram, run:
+```bash
+python solve_H.py
+```
+To solve for non-Hermitian phase diagram, run:
+```bash
+python solve_NH.py
+```
+Each run creates a timestamped folder in `results/` containing:
 
+- `output_variables.csv` – computed data. Pre-computed data has also been uploaded in this repository.
+- `output_figures/` – auto-generated plots per model (git-ignored).
 
-### Non-Hermitian Phase Diagram
-Illustrating the edge states and topological invariant in non-Hermitian systems:
+To visualize full phase diagrams, set the `foldername` variable in `load_phase_diagram.py`, then run:
 
-<img src="https://github.com/janetzhong/Edge-State-Supplementary-GIF/blob/8441ed3af37283dbb0a83197f2017ce78ea4a990/animationNH.gif" alt="Non-Hermitian Edge State Animation" width="600">
+```bash
+python load_phase_diagram.py
+```
+This creates a `phase_diag_figures/` folder inside the same results directory.
+
+## Citation
+
+If you use this code or build on this work, please consider citing us:
+
+```bibtex
+@misc{zhong2025topological,
+      title={Topological nature of edge states for one-dimensional systems without symmetry protection}, 
+      author={Janet Zhong and Heming Wang and Alexander N Poddubny and Shanhui Fan},
+      year={2025},
+      eprint={2412.10526},
+      archivePrefix={arXiv},
+      primaryClass={cond-mat.mes-hall},
+      url={https://arxiv.org/abs/2412.10526}, 
+}
+```
