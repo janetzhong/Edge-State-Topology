@@ -53,8 +53,8 @@ def main():
             # Calculate winding numbers
             winding_data = calculate_winding_numbers_H([Mdeg1, Mdeg2], zbz, mbzplus, mbzminus)
             Wtotal = winding_data['Wtotal']
-            Wbz1 = winding_data['Wdeg1']
-            Wbz2 = winding_data['Wdeg2']
+            Wbz1 = winding_data['Wbz1']
+            Wbz2 = winding_data['Wbz2']
             interp_real_plus_closed, interp_imag_plus_closed = winding_data['interp_curves'][0]
             interp_real_minus_closed, interp_imag_minus_closed = winding_data['interp_curves'][1]
 

@@ -218,6 +218,10 @@ def Eminus(z, hminus, hzero, hplus):
     return do - np.sqrt(dx**2 + dy**2 + dz**2)
 
 def solve_gbz_NH(eigenvalues, Eedge, hminus, hzero, hplus, tol=1e-3):
+    # Note: this gbz solver (keeping middle two roots) generally works for degree 4 in z characteristic 
+    # polynomial. However, this subGBZ sorter using Eplus and Eminus functions works for the case in our 
+    # paper, but does NOT work for general NH models. For more general cases one should use other 
+    # analytical or machine learning methods to sort subGBZ.
     def filter_eigenvalues_closest(eigenvalues, Eedge):
         eigenvalues = np.array(eigenvalues)
         indices_to_remove = []
@@ -338,8 +342,8 @@ def calculate_winding_numbers_H(Mdeglist, zbz, mbzplus, mbzminus):
     Wbz2 = count_inside(path_minus, Mdeg1) + count_inside(path_minus, Mdeg2)
     return {
         'Wtotal': Wbz1 + Wbz2,
-        'Wdeg1': Wbz1,
-        'Wdeg2': Wbz2,
+        'Wbz1': Wbz1,
+        'Wbz2': Wbz2,
         'interp_curves': (interp_plus, interp_minus)
     }
 
