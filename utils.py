@@ -529,8 +529,8 @@ def create_main_figure_NH(eigenvalues, eigenvectors, Eedge, Enotedge,
     plt.subplot(4, 2, 1)
     plt.imshow(np.abs(eigenvectors), cmap='inferno', aspect='auto')
     plt.colorbar(label=r'$|\psi_n|$')
-    plt.ylabel("$\mathrm{eigenvector\ index}$")
-    plt.xlabel("$\mathrm{site}$")
+    plt.xlabel("$\mathrm{eigenvector\ index}$")
+    plt.ylabel("$\mathrm{site}$")
     plt.title(f"$t={t:.3g},\; \\alpha={var:.3g}$")
 
     # 2. Eigenvalue spectrum
