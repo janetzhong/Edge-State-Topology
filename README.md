@@ -19,8 +19,8 @@ Each run creates a timestamped folder in `results/` containing:
 - `output_figures/` – auto-generated plots per model (git-ignored). 
 
 An example of an output figure per model for the Hermitian and non-Hermitian case respectively looks like:
-<img src="https://github.com/user-attachments/assets/070d4871-a22f-4b5b-8d30-100b2621e6f1" width="400"/>
-<img src="https://github.com/user-attachments/assets/ae090dbf-6429-496f-8e5f-ffd8718b593e" width="400"/>
+<img src="https://github.com/user-attachments/assets/ea6953e0-2afc-42a6-adf7-8d8d0d4f2753" width="400"/>
+<img src="https://github.com/user-attachments/assets/46e1c2eb-52d9-4b06-a540-87866ab8ac62" width="400"/>
 
 To visualize full phase diagrams, set the `foldername` variable in `load_phase_diagram.py`, then run:
 
