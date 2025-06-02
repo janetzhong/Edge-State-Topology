@@ -14,8 +14,8 @@ plt.rcParams.update({
 })
 
 # set output folder
-foldername = "NH_2025-05-30_12-04"
-foldername = "H_2025-05-30_12-03"
+foldername = "NH_2025-06-02_09-36"
+foldername = "H_2025-06-02_09-36"
 
 # set variables and load data
 steps = 80

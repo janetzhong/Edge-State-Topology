@@ -137,16 +137,12 @@ def solve_Edeg(hminus, hzero, hplus):
     tr = lambda H: np.trace(H) / 2
     tl = lambda H: H - tr(H) * np.eye(2)
     ip = lambda A, B: 0.5 * np.trace(A @ B)
-    d1, d0, d_1 = tr(hplus), tr(hzero), tr(hminus)
+    dp, d0, dm = tr(hplus), tr(hzero), tr(hminus)
     hp, h0, hm = tl(hplus), tl(hzero), tl(hminus)
     G = [[ip(hp, hp), ip(hp, hm)], [ip(hm, hp), ip(hm, hm)]]
-    D = [[d1, d0, d_1],
-         [ip(hp, hp), ip(hp, h0), ip(hp, hm)],
-         [ip(hm, hp), ip(hm, h0), ip(hm, hm)]]
-    T = [[ip(hp, hp), ip(hp, h0), ip(hp, hm)],
-         [ip(h0, hp), ip(h0, h0), ip(h0, hm)],
-         [ip(hm, hp), ip(hm, h0), ip(hm, hm)]]
-    v = tl(d1 * hminus - d_1 * hplus)
+    D = [[dp, d0, dm], [ip(hp, hp), ip(hp, h0), ip(hp, hm)], [ip(hm, hp), ip(hm, h0), ip(hm, hm)]]
+    T = [[ip(hp, hp), ip(hp, h0), ip(hp, hm)], [ip(h0, hp), ip(h0, h0), ip(h0, hm)], [ip(hm, hp), ip(hm, h0), ip(hm, hm)]]
+    v = tl(dp * hminus - dm * hplus)
     corr = ip(v, v)
     detG, detD, detT = map(np.linalg.det, [G, D, T])
     s = np.sqrt(detT * (detG - corr))
@@ -179,17 +175,17 @@ def solve_Mdeg(Edeg_list, hminus, hzero, hplus, tol=1e-3):
     deg_M_list = []
     for E in Edeg_list:
         _, (M1, M2, M3, M4) = find_z1toz4_M1toM4(E, hminus, hzero, hplus)
-        if abs(M1 - M2) <= tol:
+        if abs(M1/M2 - 1) <= tol:
             deg_M_list.append(M1)
-        elif abs(M1 - M3) <= tol:
+        elif abs(M1/M3 - 1) <= tol:
             deg_M_list.append(M1)
-        elif abs(M1 - M4) <= tol:
+        elif abs(M1/M4 - 1) <= tol:
             deg_M_list.append(M1)
-        elif abs(M2 - M3) <= tol:
+        elif abs(M2/M3 - 1) <= tol:
             deg_M_list.append(M2)
-        elif abs(M2 - M4) <= tol:
+        elif abs(M2/M4 - 1) <= tol:
             deg_M_list.append(M2)
-        elif abs(M3 - M4) <= tol:
+        elif abs(M3/M4 - 1) <= tol:
             deg_M_list.append(M3)
         else:
             # fallback: should not need this though
