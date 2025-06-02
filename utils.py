@@ -413,7 +413,7 @@ def create_main_figure_H(eigenvalues, eigenvectors, Eedge, Enotedge,
              label='$E_{\\mathrm{edge}}$')
     plt.plot(np.real(Enotedge), np.imag(Enotedge), 'o',
              markersize=10, markeredgecolor='r', markerfacecolor='none', markeredgewidth=3,
-             label='$E_{\\mathrm{bulk}}$')
+             label='$E_{\\mathrm{notedge}}$')
     plt.plot(np.real(eigenvalues), np.imag(eigenvalues), 'o', markersize=3, color='black')
     plt.xlabel("$\\mathrm{Re}(E)$")
     plt.ylabel("$\\mathrm{Im}(E)$")
@@ -540,7 +540,7 @@ def create_main_figure_NH(eigenvalues, eigenvectors, Eedge, Enotedge,
              label='$E_{\\mathrm{edge}}$')
     plt.plot(np.real(Enotedge), np.imag(Enotedge), 'o',
              markersize=10, markeredgecolor='r', markerfacecolor='none', markeredgewidth=3,
-             label='$E_{\\mathrm{bulk}}$')
+             label='$E_{\\mathrm{notedge}}$')
     plt.plot(np.real(eigenvalues), np.imag(eigenvalues), 'o', markersize=3, color='black')
     plt.xlabel("$\\mathrm{Re}(E)$")
     plt.ylabel("$\\mathrm{Im}(E)$")
