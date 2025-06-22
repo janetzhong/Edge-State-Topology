@@ -1,7 +1,7 @@
-# Generated output figures
-output_figures/
-*/output_figures/
-**/output_figures/
+# Ignore everything inside any output_figures folder
+**/output_figures/**
+# Allow only figure_1.jpg inside output_figures folders
+!**/output_figures/figure_1.jpg
 
 # Compiled Python files
 __pycache__/
