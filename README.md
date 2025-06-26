@@ -29,6 +29,10 @@ python load_phase_diagram.py
 
 This creates a `phase_diag_figures/` folder inside the same results directory.
 
+## Extra
+
+- `edgestate_topology_symbolic.nb`: We also include a starter Mathematica notebook for symbolic formulas and figures.
+
 ## Citation
 
 If you use this code or build on this work, please consider citing us:
