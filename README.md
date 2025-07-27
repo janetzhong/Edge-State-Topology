@@ -38,13 +38,18 @@ This creates a `phase_diag_figures/` folder inside the same results directory.
 If you use this code or build on this work, please consider citing us:
 
 ```bibtex
-@misc{zhong2025topological,
-      title={Topological nature of edge states for one-dimensional systems without symmetry protection},
-      author={Janet Zhong and Heming Wang and Alexander N Poddubny and Shanhui Fan},
-      year={2025},
-      eprint={2412.10526},
-      archivePrefix={arXiv},
-      primaryClass={cond-mat.mes-hall},
-      url={https://arxiv.org/abs/2412.10526},
+@article{zhong2025topological,
+  title = {Topological Nature of Edge States for One-Dimensional Systems without Symmetry Protection},
+  author = {Zhong, Janet and Wang, Heming and Poddubny, Alexander N. and Fan, Shanhui},
+  journal = {Phys. Rev. Lett.},
+  volume = {135},
+  issue = {1},
+  pages = {016601},
+  numpages = {10},
+  year = {2025},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/k77w-ft26},
+  url = {https://link.aps.org/doi/10.1103/k77w-ft26}
 }
 ```
